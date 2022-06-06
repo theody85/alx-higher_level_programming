@@ -1,37 +1,72 @@
 #include "lists.h"
 
 /**
- * _compare_extreme_nodes - function that use a recursion to check palindromic
- * @head: head of linked list
- * @tail: the node that will be the tail of a singly linked list
- * Return: 0 if it is not a palindrome, 1 if it is a palindrome
+ * reverse_listint - reverses a linked list
+ * @head: pointer to the first node in the list
+ *
+ * Return: pointer to the first node in the new list
  */
-int _compare_extreme_nodes(listint_t **head, listint_t *tail)
+void reverse_listint(listint_t **head)
 {
-	int result;
+	listint_t *prev = NULL;
+	listint_t *current = *head;
+	listint_t *next = NULL;
 
-	if (!tail)
-		return (1);
+	while (current)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
 
-	result = _compare_extreme_nodes(head, tail->next);
-	if (result == 0)
-		return (0);
-	result = ((*head)->n == tail->n);
-	*head = (*head)->next;
-
-	return (result);
+	*head = prev;
 }
 
 /**
- * is_palindrome - is palindrome a simply linked list without using a while
+ * is_palindrome - checks if a linked list is a palindrome
+ * @head: double pointer to the linked list
  *
- * @head: head of linked list
- * Return: call another function to call the last node in less time
- * 0 if it is not a palindrome, 1 if it is a palindrome
+ * Return: 1 if it is, 0 if not
  */
 int is_palindrome(listint_t **head)
 {
-	if (!head)
-		return (0);
-	return (_compare_extreme_nodes(head, *head));
+	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
+
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
+
+	while (1)
+	{
+		fast = fast->next->next;
+		if (!fast)
+		{
+			dup = slow->next;
+			break;
+		}
+		if (!fast->next)
+		{
+			dup = slow->next->next;
+			break;
+		}
+		slow = slow->next;
+	}
+
+	reverse_listint(&dup);
+
+	while (dup && temp)
+	{
+		if (temp->n == dup->n)
+		{
+			dup = dup->next;
+			temp = temp->next;
+		}
+		else
+			return (0);
+	}
+
+	if (!dup)
+		return (1);
+
+	return (0);
 }
