@@ -284,16 +284,16 @@ class testcases(unittest.TestCase):
         """testing save_to_file"""
         test1 = Square(1, 1, 1, 1)
         test2 = Square(2, 2, 2, 2)
-        l = [test1, test2]
-        Square.save_to_file(l)
+        buf = [test1, test2]
+        Square.save_to_file(buf)
         with open("Square.json", "r") as file:
             ls = [test1.to_dictionary(), test2.to_dictionary()]
             self.assertEqual(json.dumps(ls), file.read())
 
     def test_empty_str(self):
         """pasing empy string"""
-        l = []
-        Square.save_to_file(l)
+        buf = []
+        Square.save_to_file(buf)
         with open("Square.json", "r") as file:
             self.assertEqual("[]", file.read())
 
@@ -320,7 +320,7 @@ class testcases(unittest.TestCase):
         """testing load_from_file"""
         try:
             os.remove("Square.json")
-        except:
+        except Exception:
             pass
         self.assertEqual(Square.load_from_file(), [])
 
@@ -328,7 +328,7 @@ class testcases(unittest.TestCase):
         """loading empy file"""
         try:
             os.remove("Square.json")
-        except:
+        except Exception:
             pass
         open("Square.json", 'a').close()
         self.assertEqual(Square.load_from_file(), [])
