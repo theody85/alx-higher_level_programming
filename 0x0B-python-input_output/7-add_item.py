@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"Input and output module"
-from sys import argv
+"""Input and output module"""
 
+
+from sys import argv
 
 save_to_json_file = __import('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import('6-load_from_json_file').load_from_json_file
