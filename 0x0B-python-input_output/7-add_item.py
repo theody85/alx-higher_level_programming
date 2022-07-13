@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Input and output module"""
+"Input and output module"
 from sys import argv
 
 
