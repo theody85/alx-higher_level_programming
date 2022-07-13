@@ -2,8 +2,10 @@
 """Class Module"""
 
 
+
 class Student:
     """defines a student by certain qualities"""
+
 
     def __init__(self, first_name, last_name, age):
         """Instantiates first_name, last_name and age of an instance"""
