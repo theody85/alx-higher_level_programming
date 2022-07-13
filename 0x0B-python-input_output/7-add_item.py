@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""input and output module"""
-import json
+"""Input and output module"""
 from sys import argv
 
 
