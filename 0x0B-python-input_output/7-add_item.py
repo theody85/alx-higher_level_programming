@@ -10,8 +10,8 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 filename = "add_item.json"
 # Create the object or calling from json
 try:
-    f = open(filename, 'r')
-    obj = load_from_json_file(filename)
+    with open(filename, 'r') as f:
+        obj = load_from_json_file(f)
 except Exception:
     obj = []
 
@@ -20,4 +20,4 @@ for i in range(1, len(argv)):
 
 # Create json file
 with open(filename, 'w') as f:
-    json.dump(obj, f)
+    save_to_json_file(obj, f)
