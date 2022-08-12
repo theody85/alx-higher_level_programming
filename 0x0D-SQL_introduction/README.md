@@ -22,13 +22,13 @@ All the following files are scripts of MySQL:
 | `8-count_89.sql` | displays the number of records with id = 89 in the table `first_table` of the database `hbtn_0c_0` |
 | `9-full_creation.sql` | creates a table `second_table` in the database `hbtn_0c_0` |
 | `10-top_score.sql` | Lists all records of the table `second_table` of the database `hbtn_0c_0` |
-| `11-genre_id_all_shows.sql` | Lists all shows contained in the database `hbtn_0d_tvshows` |
-| `12-no_genre.sql` | Lists all shows contained in `hbtn_0d_tvshows` without a genre linked |
-| `13-count_shows_by_genre.sql` | Lists all genres from `hbtn_0d_tvshows` and displays the number of shows linked to each |
-| `14-my_genres.sql` | Uses the `hbtn_0d_tvshows` database to lists all genres of the show `Dexter` |
-| `15-comedy_only.sql` | Lists all Comedy shows in the database `hbtn_0d_tvshows` |
-| `16-shows_by_genre.sql` | Lists all shows, and all genres linked to that show, from the database `hbtn_0d_tvshows` |
-| `100-not_my_genres.sql` | Uses the `hbtn_0d_tvshows` database to list all genres not linked to the show `Dexter` |
-| `101-not_a_comedy.sql` | Lists all shows without the genre `Comedy` in the database `hbtn_0d_tvshows` |
-| `102-rating_shows.sql` | Lists all shows from `hbtn_0d_tvshows_rate` by their rating |
-| `103-rating_genres.sql` | Lists all genres in the database `hbtn_0d_tvshows_rate` by their rating |
+| `11-best_score.sql` | Lists all records with a score >= 10 in the table `second_table` of the database `hbtn_0c_0` |
+| `12-no_cheating.sql` | updates the score of Bob to 10 in the table `second_table`|
+| `13-change_class.sql` | Removes all records with a score <= 5 in the table `second_table` of the database `hbtn_0c_0` |
+| `14-average.sql` | Computes the score average of all records in the table `second_table` of the database `hbtn_0c_0` |
+| `15-groups.sql` | Lists the number of records with the same score in the table `second_table` of the database `hbtn_0c_0` |
+| `16-no_link.sql` | Lists all records of the table `second_table` of the database `hbtn_0c_0` |
+| `100-move_to_utf8.sql` | Converts `hbtn_0c_0` database to UTF8 `(utf8mb4, collate utf8mb4_unicode_ci)`  |
+| `101-avg_temperatures.sql` | Displays the average temperature (Fahrenheit) by city ordered by temperature |
+| `102-top_city.sql` | Displays the top 3 of cities temperature during July and August ordered by temperature |
+| `103-max_state.sql` | Displays the max temperature of each state (ordered by State name). |
