@@ -28,9 +28,9 @@ def pascal_triangle(n):
         return [[1]]
     elif n == 2:
         return [[1], [1, 1]]
-    l = []
-    l.append([1])
-    l.append([1, 1])
+    lis = []
+    lis.append([1])
+    lis.append([1, 1])
     for i in range(2, n):
-        l.append(next_list(l[i - 1]))
-    return l
+        lis.append(next_list(l[i - 1]))
+    return lis
