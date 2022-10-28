@@ -32,5 +32,5 @@ def pascal_triangle(n):
     lis.append([1])
     lis.append([1, 1])
     for i in range(2, n):
-        lis.append(next_list(l[i - 1]))
+        lis.append(next_list(lis[i - 1]))
     return lis
